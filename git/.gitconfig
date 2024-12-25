@@ -1,0 +1,33 @@
+[user]
+    name = "Eric Lindell"
+    email = "eric.lindell@avensia.com"
+
+[pull]
+    rebase = true
+
+[diff]
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+
+[alias]
+    st = status
+    a = add -A .
+    ls = log --all --oneline --decorate --graph
+    co = checkout
+    d = difftool
+    ds = d --staged
+    rib = "!f() { git rebase -i $(git merge-base HEAD $(git rev-parse --abbrev-ref origin/HEAD)); }; f"
+   
+[init]
+	defaultBranch = main
+
+[rerere]
+	enabled = true

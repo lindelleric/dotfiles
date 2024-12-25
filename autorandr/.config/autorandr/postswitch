@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+nitrogen --restore 2> /dev/null
+
+# qtile cmd-obj -o cmd -f "restart"
