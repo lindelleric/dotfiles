@@ -1,3 +1,4 @@
+#! /usr/bin/bash
 
 alias ls="eza --group-directories-first"
 alias l="ls -lah"
@@ -17,3 +18,4 @@ alias ssh='TERM=xterm-256color ssh'
 
 alias battery="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"
 
+alias vim="nvim"
