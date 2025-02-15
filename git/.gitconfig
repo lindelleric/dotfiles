@@ -1,9 +1,16 @@
-[user]
-    name = "Eric Lindell"
-    email = "eric.lindell@avensia.com"
+; Keep this in ~/.gitconfig.local
+; [user]
+;     name = "..."
+;     email = "..."
+
+[include]
+    path = ~/.gitconfig.local
 
 [pull]
     rebase = true
+
+[merge]
+    ff = only
 
 [diff]
     tool = difftastic
