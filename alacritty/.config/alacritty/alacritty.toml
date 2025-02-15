@@ -53,8 +53,11 @@ unfocused_hollow = true
 blinking = "On"
 shape = "Beam"
 
+[mouse]
+hide_when_typing = true
+
 [font]
-size = 11.0
+size = 7.0
 offset = { x=0, y=0 }
 glyph_offset = { x=0, y=0 }
 
