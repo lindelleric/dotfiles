@@ -1,0 +1,52 @@
+"brightnessctl set +5%"
+   XF86MonBrightnessUp
+
+"brightnessctl set 5%-"
+   XF86MonBrightnessDown
+
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +2000"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -2000"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+# Mute microphone
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+   XF86AudioMicMute
+
+"flameshot gui"
+    m:0x0 + c:107
+    Print
+
+"arandr"
+    m:0x0 + c:235
+    XF86Display
+
+# ""
+#    XF86AudioRaiseVolume
+
+# "xdotool keyup j key --clearmodifiers Down"
+# #"xdotool key Down"
+#     m:0x20 + c:44
+#     Mod3 + j
+# 
+# "xdotool keyup h key --clearmodifiers Left"
+# #"xdotool key Left"
+#     m:0x20 + c:43
+#     Mod3 + h
+# 
+# "xdotool keyup k key --clearmodifiers Up"
+# #"xdotool key Up"
+#     m:0x20 + c:45
+#     Mod3 + k
+# 
+# "xdotool keyup l key --clearmodifiers Right"
+# #"xdotool key Right"
+#     m:0x20 + c:46
+#     Mod3 + l
