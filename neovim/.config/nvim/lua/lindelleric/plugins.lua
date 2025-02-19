@@ -16,6 +16,11 @@ return require('packer').startup(function(use)
   -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release'
+  }
+
 
   use "norcalli/nvim-colorizer.lua"
 
@@ -172,19 +177,34 @@ return require('packer').startup(function(use)
   }
 
 
+-- use({
+--     'MeanderingProgrammer/render-markdown.nvim',
+--     after = { 'nvim-treesitter' },
+--     requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
+--     -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
+--     -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+--     config = function()
+--         require('render-markdown').setup({})
+--     end,
+-- })
+
+
 use({
-    'MeanderingProgrammer/render-markdown.nvim',
-    after = { 'nvim-treesitter' },
-    requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
-    -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
-    -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
-    config = function()
-        require('render-markdown').setup({})
-    end,
+    "vuki656/package-info.nvim",
+    requires = "MunifTanjim/nui.nvim",
 })
 
 
-
+use({
+  "epwalsh/obsidian.nvim",
+  tag = "*",  -- recommended, use latest release instead of latest commit
+  requires = {
+    "nvim-lua/plenary.nvim",
+    'nvim-telescope/telescope.nvim',
+    'hrsh7th/nvim-cmp',
+    'nvim-treesitter/nvim-treesitter',
+  },
+})
 
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')

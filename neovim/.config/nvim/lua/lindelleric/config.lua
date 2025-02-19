@@ -28,3 +28,4 @@ vim.cmd('au TextYankPost * silent! lua vim.highlight.on_yank()')
 vim.cmd(':set undodir=~/.local/state/nvim/undo-dir')
 vim.cmd(':set undofile')
 
+vim.opt_local.conceallevel = 2

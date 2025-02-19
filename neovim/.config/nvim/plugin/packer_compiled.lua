@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/eric/.cache/nvim/packer_hererocks/2.1.1723675123/share/lua/5.1/?.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1723675123/share/lua/5.1/?/init.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1723675123/lib/luarocks/rocks-5.1/?.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1723675123/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/eric/.cache/nvim/packer_hererocks/2.1.1723675123/lib/lua/5.1/?.so"
+local package_path_str = "/home/eric/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/home/eric/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/eric/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -182,12 +182,6 @@ _G.packer_plugins = {
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["mini.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/eric/.local/share/nvim/site/pack/packer/opt/mini.nvim",
-    url = "https://github.com/echasnovski/mini.nvim"
-  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -256,10 +250,20 @@ _G.packer_plugins = {
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/home/eric/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
   ["oil.nvim"] = {
     loaded = true,
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
+  },
+  ["package-info.nvim"] = {
+    loaded = true,
+    path = "/home/eric/.local/share/nvim/site/pack/packer/start/package-info.nvim",
+    url = "https://github.com/vuki656/package-info.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -281,14 +285,6 @@ _G.packer_plugins = {
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
-  ["render-markdown.nvim"] = {
-    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0" },
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/home/eric/.local/share/nvim/site/pack/packer/opt/render-markdown.nvim",
-    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-  },
   ["schemastore.nvim"] = {
     loaded = true,
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
@@ -298,6 +294,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eric/.local/share/nvim/site/pack/packer/start/tailwind-tools.nvim",
     url = "https://github.com/luckasRanarison/tailwind-tools.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/eric/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -339,15 +340,6 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd render-markdown.nvim ]]
-
--- Config for: render-markdown.nvim
-try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0", "config", "render-markdown.nvim")
-
-time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

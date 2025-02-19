@@ -43,12 +43,12 @@ vim.keymap.set("n", "<leader>w", ":wa<cr>")
 vim.keymap.set("n", "<leader>f", ":Neotree reveal<cr>")
 
 -- Set spelling keybinds
-vim.keymap.set("n", "<leader>ssv", function()
+vim.keymap.set("n", "<leader>zsv", function()
 	vim.cmd(':set spell')
 	vim.cmd(':setlocal spell spelllang=sv')
 end)
 
-vim.keymap.set("n", "<leader>sen", function()
+vim.keymap.set("n", "<leader>zen", function()
 	vim.cmd(':set spell')
 	vim.cmd(':setlocal spell spelllang=en')
 end)
