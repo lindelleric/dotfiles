@@ -118,6 +118,10 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
         require('luasnip').lsp_expand(args.body)
       end,
     },
+    -- Not sure what this does
+    sources = cmp.config.sources({
+      { name = 'render-markdown' },
+    }),
   })
 
 -- https://github.com/windwp/nvim-autopairs#you-need-to-add-mapping-cr-on-nvim-cmp-setupcheck-readmemd-on-nvim-cmp-repo

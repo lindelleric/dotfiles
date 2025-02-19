@@ -159,6 +159,11 @@ vim.cmd("hi GitSignsChange guibg=NONE guifg="..c.bright_yellow)
 vim.cmd("hi GitSignsUntracked guibg=NONE guifg="..c.bright_green)
 vim.cmd("hi GitSignsCurrentLineBlame guibg=NONE guifg="..c.dark3)
 
+-- render markdown
+vim.cmd("hi RenderMarkdownH1Bg guibg="..c.dark_green)
+vim.cmd("hi RenderMarkdownH2Bg guibg="..c.dark_yellow)
+vim.cmd("hi RenderMarkdownH3Bg guibg="..c.dark_red)
+
 -- Blankline
 M.highlight("IblIndent", { fg = c.dark0, gui = "nocombine" })
 M.highlight("IblWhitespace", { fg = c.dark0, gui = "nocombine" })

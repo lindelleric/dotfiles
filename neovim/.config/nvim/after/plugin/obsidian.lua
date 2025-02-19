@@ -69,6 +69,17 @@ require("obsidian").setup({
   follow_url_func = function(url)
     vim.ui.open(url) 
   end,
+  ui = {
+    enabled = false,
+    checkboxes = {
+      -- This only allows the done and todo checkboxes when doing the smart_action
+      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+      ["x"] = { char = "", hl_group = "ObsidianDone" },
+      -- [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+      -- ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+      -- ["!"] = { char = "", hl_group = "ObsidianImportant" },
+    },
+  }
 })
 
 -- extract selection into new note and link it 
