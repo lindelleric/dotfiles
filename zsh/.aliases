@@ -13,9 +13,22 @@ alias mv="mv -i"
 
 alias gti="git"
 
-# adds the correct terminal capablities when using ssh to a server that doesn't know alacratty
+# adds the correct terminal capabilities when using ssh to a server that doesn't know alacratty
 alias ssh='TERM=xterm-256color ssh'
 
 alias battery="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"
 
 alias vim="nvim"
+
+function wd_fzf_widget() {
+  local selection=$(wd list | tail -n +2 | fzf | awk '{print $1}')
+  if [[ -n "$selection" ]]; then
+    BUFFER="wd $selection"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+
+zle -N wd_fzf_widget
+
+bindkey '^@' wd_fzf_widget

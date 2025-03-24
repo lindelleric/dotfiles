@@ -56,7 +56,7 @@ eval "$(fzf --zsh)"
 # Export dotNet stuff
 export PATH=$HOME/.detnet/tools:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export DOTNET_CLI_TELEMETRY_OPTOUT=true
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
@@ -430,3 +430,12 @@ RPROMPT='%F{12}[%D{%L:%M:%S}] '$RPROMPT
 # Bun
 export BUN_INSTALL="/home/eric/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export ANDROID_HOME=~/Android
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_SDK_HOME=$ANDROID_HOME
+export ANDROID_AVD_HOME=$ANDROID_HOME/.android/avd
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
