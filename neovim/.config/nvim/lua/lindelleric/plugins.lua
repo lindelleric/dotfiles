@@ -59,9 +59,7 @@ return require('packer').startup(function(use)
   -- use 'axkirillov/hbac.nvim'
   use 'famiu/bufdelete.nvim'
 
-  use({
-    "stevearc/oil.nvim"
-  })
+  use "stevearc/oil.nvim"
 
   -- use {
   --     "zbirenbaum/copilot.lua",
@@ -119,13 +117,13 @@ return require('packer').startup(function(use)
   -- }
   use'github/copilot.vim'
 
-  use('CopilotC-Nvim/CopilotChat.nvim', {
-      branch = 'canary',
-      dependencies = {
-          'nvim-lua/plenary.nvim',
-          'zbirenbaum/copilot.lua'
-      }
-  })
+  -- use('CopilotC-Nvim/CopilotChat.nvim', {
+  --     branch = 'main',
+  --     dependencies = {
+  --         'nvim-lua/plenary.nvim',
+  --         'zbirenbaum/copilot.lua'
+  --     }
+  -- })
 
   -- Give me that tree!
   -- use("nvim-tree/nvim-web-devicons")
@@ -140,6 +138,8 @@ return require('packer').startup(function(use)
         "MunifTanjim/nui.nvim",
       }
     }
+
+    use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -200,6 +200,17 @@ use({
     'nvim-treesitter/nvim-treesitter',
   },
 })
+
+-- use {
+--   'gelguy/wilder.nvim',
+--   config = function()
+--     local wilder = require('wilder')
+--     wilder.setup({modes = {':', '/', '?'}})
+--     wilder.set_option('renderer', wilder.popupmenu_renderer({
+--       pumblend = 20,
+--     }))
+--   end,
+-- }
 
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')

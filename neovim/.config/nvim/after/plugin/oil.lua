@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>o", function()
+vim.keymap.set("n", "<leader>m", function()
   vim.cmd("topleft split | wincmd l")
   require("oil").open()
 end)

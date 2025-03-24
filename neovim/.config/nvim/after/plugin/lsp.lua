@@ -1,7 +1,6 @@
 local lsp = require("lsp-zero")
 local root_pattern = require('lspconfig.util').root_pattern
 
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here 
@@ -98,6 +97,7 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 --   ["<C-Space>"] = cmp.mapping.complete(),
 -- })
 
+
   cmp.setup({
     window = {
       completion = cmp.config.window.bordered(),
@@ -118,8 +118,13 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
         require('luasnip').lsp_expand(args.body)
       end,
     },
-    -- Not sure what this does
     sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
+      { name = 'obsidian' },
+      { name = 'obsidian_new' },
+      { name = 'obsidian_tags' },
       { name = 'render-markdown' },
     }),
   })

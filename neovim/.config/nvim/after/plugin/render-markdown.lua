@@ -3,7 +3,6 @@ require('render-markdown').setup( {
     heading = {
         width = 'block',
         right_pad = 2,
-        border = 'thin'
     },
     code = {
         width = 'block',
