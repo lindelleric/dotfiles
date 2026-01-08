@@ -25,6 +25,40 @@ require('mason-lspconfig').setup({
     },
     handlers = {
       function(server_name)
+          if server_name == "css_variables" then
+              require('lspconfig')[server_name].setup({
+                  settings = {
+                    cssVariables = {
+                        -- blacklistFolders = {
+                        --     "**/.cache",
+                        --     "**/.DS_Store",
+                        --     "**/.git",
+                        --     "**/.hg",
+                        --     "**/.next",
+                        --     "**/.svn",
+                        --     "**/bower_components",
+                        --     "**/CVS",
+                        --     "**/dist",
+                        --     "**/tests",
+                        --     "**/tmp",
+                        -- },
+                        lookupFiles = {
+                            "**/*.css",
+                            "**/*.scss",
+                            "**/*.sass",
+                            "**/*.less",
+                            "node_modules/@052-sgdn/design-tokens/build/css/digit/tokens.css",
+                            "node_modules/@052-sgdn/design-tokens/build/css/base/tokens-base.css",
+                            "node_modules/@052-sgdn/design-tokens/build/css/globals/tokens.css",
+                            "node_modules/@052-sgdn/design-tokens/build/css/large/tokens-large.css",
+                            "node_modules/@052-sgdn/design-tokens/build/css/medium/tokens-medium.css",
+                            "node_modules/@052-sgdn/design-tokens/build/css/small/tokens-small.css",
+                        },
+                    }
+                  },
+              })
+              return
+          end
         require('lspconfig')[server_name].setup({})
       end,
     },
@@ -81,6 +115,42 @@ lsp.configure('jsonls', {
 --     },
 --   },
 -- }
+
+-- lsp.configure('css_variables', {
+--   settings = {
+--     cssVariables = {
+--         lookupFiles = {
+--             "**/*.css",
+--             "**/*.scss",
+--             "**/*.sass",
+--             "**/*.less",
+--             "node_modules/@052-sgdn/**/*.css"
+--         },
+--     }
+--   },
+-- })
+--
+-- lsp.configure('css_variables', {
+--     Settings = {
+--       cssVariables = {
+--         lookupFiles = { '**/*.css' },
+--         blacklistFolders = {
+--           '**/.cache',
+--           '**/.DS_Store',
+--           '**/.git',
+--           '**/.hg',
+--           '**/.next',
+--           '**/.svn',
+--           '**/bower_components',
+--           '**/CVS',
+--           '**/dist',
+--           '**/node_modules',
+--           '**/tests',
+--           '**/tmp',
+--         },
+--       },
+--     },
+-- })
 
 lsp.configure('ts_ls', { root_dir = root_pattern('.git'), detached = false })
 lsp.configure('csharp_ls', { root_dir = root_pattern('.git'), detached = false })
@@ -164,6 +234,7 @@ lsp.on_attach(function(client, bufnr)
 --      vim.cmd.LspStop('eslint')
 --      return
 --  end
+
 
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)

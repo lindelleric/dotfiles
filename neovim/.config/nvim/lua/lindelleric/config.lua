@@ -17,6 +17,9 @@ vim.cmd(':set ignorecase')
 vim.cmd(':set smartcase')
 vim.cmd(':set incsearch')
 
+-- Fixes hot reloading with webpack https://webpack.js.org/configuration/watch/#vim
+vim.cmd(':set backupcopy=yes')
+
 -- Don't start with all the folds folded 
 -- Used most for norg
 vim.cmd(':set foldlevelstart=99')

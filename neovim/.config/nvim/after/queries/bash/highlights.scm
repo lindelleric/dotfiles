@@ -27,7 +27,7 @@
 (command_name
   (word) @bash.specialCommand
   (#any-of? @bash.specialCommand
-    "yarn" "next" "tsc" "vitest" "cross-env" "node" "wrangler" "npx" "git" "eslint" "prettier" "jest" "webpack" "node-git-hooks" "expo"
+    "yarn" "next" "tsc" "vitest" "cross-env" "node" "wrangler" "npx" "git" "eslint" "prettier" "jest" "webpack" "node-git-hooks" "expo" "opennextjs-cloudflare"
   )
 )
 
@@ -35,7 +35,7 @@
   argument: 
   (word) @bash.specialCommand
   (#any-of? @bash.specialCommand
-    "yarn" "next" "tsc" "vitest" "cross-env" "node" "wrangler" "npx" "git" "eslint" "prettier" "jest" "webpack" "node-git-hooks" "expo"
+    "yarn" "next" "tsc" "vitest" "cross-env" "node" "wrangler" "npx" "git" "eslint" "prettier" "jest" "webpack" "node-git-hooks" "expo" "opennextjs-cloudflare"
 ))
 
 (command
