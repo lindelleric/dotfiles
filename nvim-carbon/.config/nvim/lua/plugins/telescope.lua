@@ -39,7 +39,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+    vim.keymap.set('n', '<leader>se', builtin.diagnostics, { desc = '[S]earch [E]rrors' })
 
     vim.keymap.set('n', '<leader>gs', builtin.git_status)
     vim.keymap.set('n', '<leader>ct', builtin.lsp_type_definitions)

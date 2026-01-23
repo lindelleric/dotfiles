@@ -47,3 +47,10 @@ vim.opt.cursorline = false
 vim.opt.scrolloff = 10
 
 vim.cmd ':set spellsuggest+=10'
+
+-- Disables netrw. I want to use neotree instead
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
+-- Obsidian.nvim wants this
+vim.opt.conceallevel = 2

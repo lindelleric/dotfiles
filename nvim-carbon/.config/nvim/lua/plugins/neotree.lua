@@ -13,6 +13,7 @@ return {
   opts = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
     filesystem = {
+      hijack_netrw_behavior = 'open_default',
       filtered_items = {
         visible = true, -- when true, they will just be displayed differently than normal items
         never_show = {
