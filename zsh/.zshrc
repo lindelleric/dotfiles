@@ -13,32 +13,32 @@ compinit
 
 
 # source nvm
-source ~/.nvm/nvm.sh
-
-autoload -U add-zsh-hook
-
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# source ~/.nvm/nvm.sh
+#
+# autoload -U add-zsh-hook
+#
+# load-nvmrc() {
+#   local nvmrc_path
+#   nvmrc_path="$(nvm_find_nvmrc)"
+#
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version
+#     nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+#       nvm use
+#     fi
+#   elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+#
+#
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 
 # zsh-vi-mode
@@ -431,6 +431,7 @@ RPROMPT='%F{12}[%D{%L:%M:%S}] '$RPROMPT
 export BUN_INSTALL="/home/eric/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Android SDK
 export ANDROID_HOME=~/Android
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_SDK_HOME=$ANDROID_HOME
@@ -439,3 +440,11 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# fnm
+FNM_PATH="/home/eric/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env --use-on-cd --corepack-enabled`"
+fi
+

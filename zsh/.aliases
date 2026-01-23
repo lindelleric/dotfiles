@@ -28,7 +28,8 @@ function wd_fzf_widget() {
   fi
   zle reset-prompt
 }
-
 zle -N wd_fzf_widget
-
 bindkey '^@' wd_fzf_widget
+
+
+alias oc="opencode"

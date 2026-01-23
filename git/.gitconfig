@@ -25,6 +25,8 @@
     d = difftool
     ds = d --staged
     rib = "!f() { git rebase -i $(git merge-base HEAD $(git rev-parse --abbrev-ref origin/HEAD)); }; f"
+    c = "!f() { git commit -m \"$1\"; }; f"
+    pushf = "git push --force-with-lease"
    
 [init]
 	defaultBranch = main
