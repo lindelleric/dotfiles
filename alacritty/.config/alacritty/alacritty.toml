@@ -57,7 +57,7 @@ shape = "Beam"
 hide_when_typing = true
 
 [font]
-size = 7.0
+size = 6.3
 offset = { x=0, y=0 }
 glyph_offset = { x=0, y=0 }
 
