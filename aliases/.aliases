@@ -1,6 +1,19 @@
 #!/usr/bin bash
 
-alias oc="opencode"
+# fzf + wd: Ctrl+Space to fuzzy-jump to warp point
+function fzf-wd() {
+  local selected=$(wd list | tail -n +2 | awk '{print $1}' | fzf --height 40% --reverse)
+  if [[ -n "$selected" ]]; then
+    BUFFER="wd $selected"
+    zle accept-line
+    zle reset-prompt
+  fi
+}
+zle -N fzf-wd
+bindkey '^ ' fzf-wd
+######
+
+alias oc="OPENCODE_ENABLE_EXA=true opencode"
 
 alias ls="eza --group-directories-first"
 alias l="ls -lah"
