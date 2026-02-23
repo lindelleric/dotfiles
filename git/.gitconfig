@@ -38,3 +38,5 @@
 
 [rerere]
 	enabled = true
+[core]
+	pager = less --mouse --wheel-lines=3
